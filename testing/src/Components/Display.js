@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Dashboard from "./Dashboard";
-import { Card, Grid } from "@material-ui/core";
+import { Card } from "@material-ui/core";
 
 const Display = () => {
   const [strike, setStrike] = useState(0);
@@ -29,13 +29,13 @@ const Display = () => {
 
   const foulHandler = () => {
     if (foul < 3) {
-      if (strike == 0) {
+      if (strike === 0) {
         setStrike(1);
         SetFoul(foul + 1);
-      } else if (strike == 1) {
+      } else if (strike === 1) {
         setStrike(2);
         SetFoul(foul + 1);
-      } else if (strike == 2) {
+      } else if (strike === 2) {
         SetFoul(foul + 1);
       }
     }
