@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Dashboard from "./Dashboard";
+import { Card, Grid } from "@material-ui/core";
 
 const Display = () => {
   const [strike, setStrike] = useState(0);
@@ -22,6 +23,7 @@ const Display = () => {
     } else {
       setBall(0);
       setStrike(0);
+      SetFoul(0);
     }
   };
 
@@ -56,18 +58,29 @@ const Display = () => {
   return (
     <>
       <div className="display-container">
-        <h1>Strikes: {strike}</h1>
-        <h1>Balls: {ball}</h1>
-        <h1>Fouls: {foul}</h1>
-        <h1>Hits: {hit}</h1>
-        <Dashboard
-          strikeHandler={strikeHandler}
-          ballHandler={ballHandler}
-          foulHandler={foulHandler}
-          hitHandler={hitHandler}
-          resetHandler={resetHandler}
-        />
+        <div className="display-card-container">
+          <Card className="display-cards">
+            <h1>Strikes: {strike}</h1>
+          </Card>
+          <Card className="display-cards">
+            <h1>Balls: {ball}</h1>
+          </Card>
+          <Card className="display-cards">
+            <h1>Fouls: {foul}</h1>
+          </Card>
+          <Card className="display-cards">
+            <h1>Hits: {hit}</h1>
+          </Card>
+        </div>
       </div>
+
+      <Dashboard
+        strikeHandler={strikeHandler}
+        ballHandler={ballHandler}
+        foulHandler={foulHandler}
+        hitHandler={hitHandler}
+        resetHandler={resetHandler}
+      />
     </>
   );
 };
