@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ButtonGroup } from "@material-ui/core";
 
-const Dashboard = () => {
+const Dashboard = props => {
   return (
     <div className="dashboard-container">
       <ButtonGroup size="large" color="secondary" fullWidth>
