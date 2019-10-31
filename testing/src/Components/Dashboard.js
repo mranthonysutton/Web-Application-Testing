@@ -5,10 +5,18 @@ const Dashboard = props => {
   return (
     <div className="dashboard-container">
       <ButtonGroup size="large" color="secondary" fullWidth>
-        <Button variant="contained">Strike</Button>
-        <Button variant="contained">Ball</Button>
-        <Button variant="contained">Foul</Button>
-        <Button variant="contained">Hit</Button>
+        <Button variant="contained" onClick={props.strikeHandler}>
+          Strike
+        </Button>
+        <Button variant="contained" onClick={props.ballHandler}>
+          Ball
+        </Button>
+        <Button variant="contained" onClick={props.foulHandler}>
+          Foul
+        </Button>
+        <Button variant="contained" onClick={props.hitHandler}>
+          Hit
+        </Button>
       </ButtonGroup>
     </div>
   );
