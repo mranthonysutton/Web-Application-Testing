@@ -17,6 +17,13 @@ const Dashboard = props => {
         <Button variant="contained" onClick={props.hitHandler}>
           Hit
         </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={props.resetHandler}
+        >
+          Reset Game
+        </Button>
       </ButtonGroup>
     </div>
   );

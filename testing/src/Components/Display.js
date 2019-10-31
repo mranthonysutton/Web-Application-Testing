@@ -8,11 +8,21 @@ const Display = () => {
   const [hit, setHit] = useState(0);
 
   const strikeHandler = () => {
-    setStrike(strike + 1);
+    if (strike < 2 && ball <= 3) {
+      setStrike(strike + 1);
+    } else {
+      setStrike(0);
+      setBall(0);
+    }
   };
 
   const ballHandler = () => {
-    setBall(ball + 1);
+    if (ball < 3 && strike <= 2) {
+      setBall(ball + 1);
+    } else {
+      setBall(0);
+      setStrike(0);
+    }
   };
 
   const foulHandler = () => {
@@ -20,7 +30,16 @@ const Display = () => {
   };
 
   const hitHandler = () => {
+    setBall(0);
+    setStrike(0);
     setHit(hit + 1);
+  };
+
+  const resetHandler = () => {
+    setBall(0);
+    setStrike(0);
+    setHit(0);
+    SetFoul(0);
   };
 
   return (
@@ -35,6 +54,7 @@ const Display = () => {
           ballHandler={ballHandler}
           foulHandler={foulHandler}
           hitHandler={hitHandler}
+          resetHandler={resetHandler}
         />
       </div>
     </>
