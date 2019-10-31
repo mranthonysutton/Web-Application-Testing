@@ -26,12 +26,23 @@ const Display = () => {
   };
 
   const foulHandler = () => {
-    SetFoul(foul + 1);
+    if (foul < 3) {
+      if (strike == 0) {
+        setStrike(1);
+        SetFoul(foul + 1);
+      } else if (strike == 1) {
+        setStrike(2);
+        SetFoul(foul + 1);
+      } else if (strike == 2) {
+        SetFoul(foul + 1);
+      }
+    }
   };
 
   const hitHandler = () => {
     setBall(0);
     setStrike(0);
+    SetFoul(0);
     setHit(hit + 1);
   };
 
